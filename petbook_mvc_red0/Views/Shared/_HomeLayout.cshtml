@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/css/home_style.css" rel="stylesheet" />
+    <script src="~/js/jquery-2.1.4.min.js"></script>
+    <script src="~/js/particles.min.js"></script>
+    <a href="~/fonts/fontawesome-webfont.eot"></a>
+    <a href="~/fonts/fontawesome-webfont.woff"></a>
+    <a href="~/fonts/FontAwesome.otf"></a>
+    <a href="~/fonts/glyphicons-halflings-regular.woff"></a>
+    <a href="~/fonts/fontawesome-webfont.ttf"></a>
+    <a href="~/fonts/glyphicons-halflings-regular.woff2"></a>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Homepage" ? "active":"")">
+                        @Html.ActionLink("Home Page", "Homepage", "Home", new { area = "" }, new { style = "background-color: #fff; center; height:30px; width:130px; " })
+                    </li>
+                    <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "LostPage" ? "active":"")">
+                        @Html.ActionLink("Lost Form", "LostPage", "Home", new { area = "" }, new { style = "background-color: #fff; center; height:30px; width:130px; " })
+                    </li>
+                    <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "FoundPage" ? "active":"")">
+                        @Html.ActionLink("Found Form", "FoundPage", "Home", new { area = "" }, new { style = "background-color: #fff; center; height:30px; width:130px; " })
+                    </li>
+                    <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "AdoptionPage" ? "active":"")">
+                        @Html.ActionLink("Adoption Form", "AdoptionPage", "Home", new { area = "" }, new { style = "background-color: #fff; center; height:30px; width:130px; " })
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>

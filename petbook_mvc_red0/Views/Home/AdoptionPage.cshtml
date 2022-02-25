@@ -1,0 +1,50 @@
+﻿@model petbook_mvc_red0.Models.Adoption
+@{
+    ViewBag.Title = "AdoptionPage";
+    Layout = "~/Views/Shared/_AdoptionLayout.cshtml";
+}
+
+<body>
+    <h1 class="agile_head text-center">Pet Adoption Form</h1>
+    <div class="w3layouts_main wrap">
+        <h2>Do you like Pets</h2>
+        <form action="#" method="post" class="agile_form">
+            <div class="icon1 w3ls-name1">
+                <label>Full Name</label>
+                @Html.EditorFor(model => model.owner_name, new { htmlAttributes = new { @Class = "cntrol col-md-2" } })
+            </div>
+            <div class="icon1 icon2">
+                <label>Address</label>
+                @Html.EditorFor(model => model.owner_last, new { htmlAttributes = new { @Class = "cntrol col-md-2" } })
+            </div>
+            <div class="clear"></div>
+            <div class="icon1 icon3">
+                <label>Contact Number</label>
+                @Html.EditorFor(model => model.user_email, new { htmlAttributes = new { @Class = "cntrol col-md-2" } })
+            </div>
+
+            <div class="agileits-rating">
+                <div>
+                    <br />
+                    <br />
+                    <br />
+                    <h5>Do You Own Pets</h5>
+                    <div>
+                        @Html.RadioButtonFor(model => model.owned_pet, "Yes") Yes
+                        @Html.RadioButtonFor(model => model.owned_pet, "No") No
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div>
+                <h6>Why do you want do Adopt a Dog/Cat/Others</h6>
+                @Html.EditorFor(model => model.reason, new { htmlAttributes = new { @Class = "cntrol col-md-2" } })
+            </div>
+
+            <div>
+
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+</body>

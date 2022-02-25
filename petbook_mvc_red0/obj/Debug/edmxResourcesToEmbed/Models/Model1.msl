@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PetbookModelStoreContainer" CdmEntityContainer="PetbookEntities1">
+    <EntitySetMapping Name="Founds">
+      <EntityTypeMapping TypeName="PetbookModel.Found">
+        <MappingFragment StoreEntitySet="Found">
+          <ScalarProperty Name="owner_name" ColumnName="owner_name" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="user_contact" ColumnName="user_contact" />
+          <ScalarProperty Name="date_found" ColumnName="date_found" />
+          <ScalarProperty Name="animaltype" ColumnName="animaltype" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="location" ColumnName="location" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Losts">
+      <EntityTypeMapping TypeName="PetbookModel.Lost">
+        <MappingFragment StoreEntitySet="Lost">
+          <ScalarProperty Name="owner_name" ColumnName="owner_name" />
+          <ScalarProperty Name="user_email" ColumnName="user_email" />
+          <ScalarProperty Name="user_contact" ColumnName="user_contact" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="pet" ColumnName="pet" />
+          <ScalarProperty Name="identification" ColumnName="identification" />
+          <ScalarProperty Name="pet_age" ColumnName="pet_age" />
+          <ScalarProperty Name="pet_breedtype" ColumnName="pet_breedtype" />
+          <ScalarProperty Name="pet_colormarking" ColumnName="pet_colormarking" />
+          <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="s_identification" ColumnName="s_identification" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="PetbookModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="owner_name" ColumnName="owner_name" />
+          <ScalarProperty Name="pet_name" ColumnName="pet_name" />
+          <ScalarProperty Name="user_email" ColumnName="user_email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="re_password" ColumnName="re_password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Adoptions">
+      <EntityTypeMapping TypeName="PetbookModel.Adoption">
+        <MappingFragment StoreEntitySet="Adoption">
+          <ScalarProperty Name="owner_name" ColumnName="owner_name" />
+          <ScalarProperty Name="owner_last" ColumnName="owner_last" />
+          <ScalarProperty Name="user_email" ColumnName="user_email" />
+          <ScalarProperty Name="owned_pet" ColumnName="owned_pet" />
+          <ScalarProperty Name="reason" ColumnName="reason" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

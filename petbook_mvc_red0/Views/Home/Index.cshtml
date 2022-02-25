@@ -1,0 +1,52 @@
+﻿@model petbook_mvc_red0.Models.User
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+}
+
+<body>
+    <div class="main">
+        <div class="main-w3l">
+            <h1 class="logo-w3">PetBook</h1>
+            <div class="w3layouts-main2">
+                <h3>Register Now</h3>
+                <form action="#" method="post">
+                    <label>Owner Name</label>
+                    @Html.EditorFor(model => model.owner_name, new { htmlAttributes = new { @Class = "cntrol col-md-2" } })
+                    <label>Pet Name</label>
+                    @Html.EditorFor(model => model.pet_name, new { htmlAttributes = new { @Class = "cntrol col-md-2" } })
+                    <label>User Email</label>
+                    @Html.EditorFor(model => model.user_email, new { htmlAttributes = new { @Class = "cntrol col-md-2" } })
+                    <label>Password</label>
+                    @Html.PasswordFor(model => model.password, new { htmlAttributes = new { @Class = "cntrol col-md-2" } })
+                    <label>Confirm Pasword</label>
+                    @Html.PasswordFor(model => model.re_password, new { htmlAttributes = new { @Class = "cntrol col-md-2" } })
+                    <input type="submit" value="Register" name="register">
+                </form>
+            </div>
+            <div class="clear"></div>
+            <!-- //main -->
+        </div>
+    </div>
+</body>
+
+
+<!--scripts-->
+<!-- js -->
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<!-- particles-JavaScript -->
+<script src="js/particles.min.js"></script>
+<script>
+				  window.onload = function() {
+					Particles.init({
+					  selector: '#myCanvas',
+					  color: '#eba7a7',
+					  connectParticles: true,
+					  minDistance: 90
+					});
+				  };
+</script>
+
+<!-- //particles-JavaScript -->
+<!--//scripts--> 

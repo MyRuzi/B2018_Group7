@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PetbookModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Found">
+    <Key>
+      <PropertyRef Name="owner_name" />
+    </Key>
+    <Property Name="owner_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="user_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="user_contact" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="date_found" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="animaltype" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Lost">
+    <Key>
+      <PropertyRef Name="owner_name" />
+    </Key>
+    <Property Name="owner_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="user_email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="user_contact" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="country" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="pet" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="identification" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="pet_age" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="pet_breedtype" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="pet_colormarking" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="message" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="s_identification" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="owner_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="pet_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="user_email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="re_password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Adoption">
+    <Key>
+      <PropertyRef Name="owner_name" />
+    </Key>
+    <Property Name="owner_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="owner_last" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="user_email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="owned_pet" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="reason" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="PetbookEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Founds" EntityType="Self.Found" />
+    <EntitySet Name="Losts" EntityType="Self.Lost" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="Adoptions" EntityType="Self.Adoption" />
+  </EntityContainer>
+</Schema>

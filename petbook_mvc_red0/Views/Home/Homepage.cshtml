@@ -1,0 +1,152 @@
+﻿@using petbook_mvc_red0.Models
+@model MultiData
+@{
+    ViewBag.Title = "Homepage";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+
+<body>
+    <div class="main">
+        <article>
+            <div>
+                <h2> Adoption Section </h2>
+            </div>
+            <div>
+                <h3> Owner Info </h3>
+            </div>
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Fullname</th>
+                            <th>Address</th>
+                            <th>Contact Number</th>
+                            <th>Do they own pets</th>
+                            <th>Reason why they want to adopt</th>
+                        </tr>
+                    </thead>
+                    @foreach (var item in Model.adoption_details)
+                    {
+                        <tbody>
+                            <tr>
+                                <th>@item.owner_name</th>
+                                <th>@item.owner_last</th>
+                                <th>@item.user_email</th>
+                                <th>@item.owned_pet</th>
+                                <th>@item.reason</th>
+                            </tr>
+                        </tbody>
+                    }
+                </table>
+            </div>
+                <div>
+                    <h2> Lost Pet Details</h2>
+                </div>
+                <div>
+                    <h3> Owner Info </h3>
+                </div>
+                <div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Contact Number</th>
+                                <th>Your Country</th>
+                                <th>Your Full Address</th>
+                                <th>Your City</th>
+                            </tr>
+                        </thead>
+                        @foreach (var item in Model.lost_details)
+                        {
+                            <tbody>
+                                <tr>
+                                    <th>@item.owner_name</th>
+                                    <th>@item.user_email</th>
+                                    <th>@item.user_contact</th>
+                                    <th>@item.country</th>
+                                    <th>@item.address</th>
+                                    <th>@item.city</th>
+                                </tr>
+                            </tbody>
+                        }
+                    </table>
+                </div>
+                <div>
+                    <h3> Pet Info </h3>
+                </div>
+                <div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Pet's Gender</th>
+                                <th>Animal Type</th>
+                                <th>Pet's Identification</th>
+                                <th>Specific/Unique Identification</th>
+                                <th>Pet's Age</th>
+                                <th>Breed or Type</th>
+                                <th>Markings or Color</th>
+                                <th>Owner's Message</th>
+                            </tr>
+                        </thead>
+                        @foreach (var item in Model.lost_details)
+                        {
+                            <tbody>
+                                <tr>
+                                    <th>@item.gender</th>
+                                    <th>@item.pet</th>
+                                    <th>@item.identification</th>
+                                    <th>@item.s_identification</th>
+                                    <th>@item.pet_age</th>
+                                    <th>@item.pet_breedtype</th>
+                                    <th>@item.pet_colormarking</th>
+                                    <th>@item.message</th>
+                                </tr>
+                            </tbody>
+                        }
+                    </table>
+                </div>
+
+
+
+                <div>
+                    <h2> Found Pet Details </h2>
+                </div>
+                <div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Finder's Name</th>
+                                <th>Email</th>
+                                <th>Contact Number</th>
+                                <th>Date Found</th>
+                                <th>Animal Type</th>
+                                <th>Description</th>
+                                <th>Place Found</th>
+                            </tr>
+                        </thead>
+                        @foreach (var item in Model.found_details)
+                        {
+                            <tbody>
+                                <tr>
+                                    <th>@item.owner_name</th>
+                                    <th>@item.user_name</th>
+                                    <th>@item.user_contact</th>
+                                    <th>@item.date_found</th>
+                                    <th>@item.animaltype</th>
+                                    <th>@item.description</th>
+                                    <th>@item.location</th>
+                                </tr>
+                            </tbody>
+                        }
+                    </table>
+                </div>
+            </article>
+        <aside>
+            <h2> Sidebar Part </h2>
+            <img src="~/images/logo.png" alt="test" />
+            <p>@ViewBag.ownername</p>
+            <p>@ViewBag.petname</p>
+        </aside>
+    </div>
+</body>

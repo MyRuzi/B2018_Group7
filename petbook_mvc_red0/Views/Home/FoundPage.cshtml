@@ -1,0 +1,58 @@
+﻿@model petbook_mvc_red0.Models.Found
+@{
+    ViewBag.Title = "FoundPage";
+    Layout = "~/Views/Shared/_FoundLayout.cshtml";
+}
+
+<body class="found">
+    <h1>Found Pet Form</h1>
+    <div class="main-w3layouts-content">
+        <div class="top-section">
+            <h2 class="sub-hdng-agileits-w3layouts">Report Us</h2>
+            <p>Please fill the form below if you find a lost pet and we will try and get it back to the owner.</p>
+        </div>
+        <div class="w3-agile-login-form">
+            <form action="#" method="post">
+                <h3 class="inner-hdng-agileinfo">Contact information</h3>
+                <div class="top-fields-wthree">
+                    <div class="input-fields-w3ls">
+                        <label>Name</label>
+                        @Html.EditorFor(model => model.owner_name, new { htmlAttributes = new { @Class = "cntrol col-md-2" } })
+                    </div>
+                    <div class="input-fields-w3ls">
+                        <label>Email</label>
+                        @Html.EditorFor(model => model.user_name, new { htmlAttributes = new { @Class = "cntrol col-md-2" } })
+                    </div>
+                    <div class="input-fields-w3ls">
+                        <label>Contact Number</label>
+                        @Html.EditorFor(model => model.user_contact, new { htmlAttributes = new { @Class = "cntrol col-md-2" } })
+                    </div>
+                </div>
+                <h3 class="inner-hdng-agileinfo">About Found Pet</h3>
+                <div class="mid-fields-agileits-w3layouts">
+                    <div class="input-fields-w3ls2">
+                        <label>Animal Type</label>
+                        <div>
+                            @{
+                                List<SelectListItem> list = new List<SelectListItem>();
+                                list.Add(new SelectListItem { Text = "Cat", Value = "Cat" });
+                                list.Add(new SelectListItem { Text = "Dog", Value = "Dog" });
+                                list.Add(new SelectListItem { Text = "Other", Value = "Other" });
+                            }
+
+                            @Html.DropDownListFor(model => model.animaltype, list, "--Select Type--", new { @class = "cntrol col-md-2" })
+                        </div>
+                    </div>
+                </div>
+                <label>Description</label>
+                @Html.EditorFor(model => model.description, new { htmlAttributes = new { @Class = "cntrol col-md-2" } })
+                <label>Location Found</label>
+                @Html.EditorFor(model => model.location, new { htmlAttributes = new { @Class = "cntrol col-md-2" } })
+                <input type="submit" value="Report Now">
+            </form>
+        </div>
+    </div>
+    <!-- JavaScript plugins -->
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+    <!--// JavaScript plugins -->
+</body>

@@ -1,0 +1,109 @@
+﻿@model petbook_mvc_red0.Models.Lost
+@{
+    ViewBag.Title = "LostPage";
+    Layout = "~/Views/Shared/_LostLayout.cshtml";
+}
+
+
+<h1 class="header-w3ls">
+    Lost Pet Form
+</h1>
+<!-- multistep form -->
+<div class="main-bothside">
+    <form action="#" method="post">
+        <div class="form-group">
+            <div class="form-mid-w3ls">
+                <label>Name</label>
+                @Html.EditorFor(model => model.owner_name, new { htmlAttributes = new { @Class = "cntrol col-md-2" } })
+            </div>
+            <div class="form-mid-w3ls">
+                <label>Email</label>
+                @Html.EditorFor(model => model.user_email, new { htmlAttributes = new { @Class = "cntrol col-md-2" } })
+            </div>
+            <div class="form-mid-w3ls">
+                <label>Contact Number</label>
+                @Html.EditorFor(model => model.user_contact, new { htmlAttributes = new { @Class = "cntrol col-md-2" } })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="form-mid-w3ls">
+                <label>Country</label>
+                @Html.EditorFor(model => model.country, new { htmlAttributes = new { @Class = "cntrol col-md-2" } })
+            </div>
+            <div class="form-mid-w3ls">
+                <label>Address</label>
+                @Html.EditorFor(model => model.address, new { htmlAttributes = new { @Class = "cntrol col-md-2" } })
+            </div>
+            <div class="form-mid-w3ls">
+                <label>City</label>
+                @Html.EditorFor(model => model.city, new { htmlAttributes = new { @Class = "cntrol col-md-2" } })
+            </div>
+        </div>
+        <div class="parent-clss">
+            <div class="personal-info">
+                <div class="form-check">
+                    <label>Gender</label>
+                    <div class="form-mid-w3ls">
+                        <div>
+                            @Html.RadioButtonFor(model => model.gender, "Male") Male
+                            @Html.RadioButtonFor(model => model.gender, "Female") Female
+                        </div>
+                    </div>
+                </div>
+
+                    <div class="form-check">
+                        <label>Animal Type</label>
+                        <div class="form-mid-w3ls">
+                            <div>
+                                @Html.RadioButtonFor(model => model.pet, "Cat") Cat
+                                @Html.RadioButtonFor(model => model.pet, "Dog") Dog
+                                @Html.RadioButtonFor(model => model.pet, "Other") Other
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-check">
+                        <label>Identification</label>
+                        <div class="form-mid-w3ls">
+                            <div>
+                                @Html.RadioButtonFor(model => model.identification, "Tattooed") Tattooed
+                                @Html.RadioButtonFor(model => model.identification, "Microchipped") Microchipped
+                                @Html.RadioButtonFor(model => model.identification, "Other") Other
+                            </div>
+                        </div>
+                    </div>
+
+
+                        <div class="form-group">
+                            <div class="form-mid-w3ls">
+                                <label>Specific Identification</label>
+                                @Html.EditorFor(model => model.s_identification, new { htmlAttributes = new { @Class = "cntrol col-md-2" } })
+                            </div>
+                        </div>
+                    </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="form-mid-w3ls">
+                <label>Pet Age</label>
+                @Html.EditorFor(model => model.pet_age, new { htmlAttributes = new { @Class = "cntrol col-md-2" } })
+            </div>
+            <div class="form-mid-w3ls">
+                <label>Breed or Type</label>
+                @Html.EditorFor(model => model.pet_breedtype, new { htmlAttributes = new { @Class = "cntrol col-md-2" } })
+            </div>
+            <div class="form-mid-w3ls">
+                <label>Pet Markings or Color</label>
+                @Html.EditorFor(model => model.pet_colormarking, new { htmlAttributes = new { @Class = "cntrol col-md-2" } })
+            </div>
+        </div>
+        <div class="form-control-w3l">
+            <label>Message</label>
+            @Html.TextAreaFor(model => model.message, new { htmlAttributes = new { @Class = "cntrol col-md-2" } })
+        </div>
+        
+        <button type="submit">Submit</button>
+    </form>
+</div>
+

@@ -1,0 +1,30 @@
+﻿@model petbook_mvc_red0.Models.User
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutPage2.cshtml";
+}
+
+<div class="main">
+    <div class="main-w3l">
+        <h1 class="logo-w3">PetBook</h1>
+        <div class="w3layouts-main">
+            <h2>Login Now</h2>
+            <div>
+            <form action="#" method="post">
+                <label>Email</label>
+                @Html.EditorFor(model => model.user_email, new { htmlAttributes = new { @Class = "cntrol col-md-2" } })
+                <label>Password</label>
+                @Html.PasswordFor(model => model.password, new { htmlAttributes = new { @Class = "cntrol col-md-2" } })
+                <input type="submit" value="Login" name="login">
+            </form>
+        </div>
+    </div>
+        <div class="clear"></div>
+    </div>
+</div>
+
+
+<!--scripts-->
+<!-- js -->
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<!-- //js -->
